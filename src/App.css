@@ -1,0 +1,81 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  color: #19303d;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh; 
+}
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #f3f5f6;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: left; 
+}
+
+.nav-links a {
+  color: #19303d;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+.nav-links a.active-link {
+  font-weight: bold;
+  color: #102a43;
+}
+
+.logout-link {
+  cursor: pointer;
+  padding: 10px 0;
+  color: #19303d;
+  align-self: left;
+  position: absolute;
+  bottom: 20px;
+}
+
+.centered-container {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  overflow: scroll;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; 
+  overflow: scroll;
+}
+
+.dashboard-content {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.centered-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  width: 100%;
+  overflow: scroll;
+}
