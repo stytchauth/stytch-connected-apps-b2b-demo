@@ -14,7 +14,7 @@ export const Dashboard: React.FC = () => {
         <strong>{role}</strong> permissions.
         <br></br>
         <br></br>
-        Test out the <strong>Admin Portal UI</strong> for managing members, settings, SSO and SCIM.
+        Test out the <strong>Admin Portal UI</strong> for managing members and settings.
       </div>
     </div>
   );

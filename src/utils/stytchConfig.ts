@@ -9,7 +9,6 @@ type Role = {
 export const adminPortalConfig = {
   allowedAuthMethods: [
     AdminPortalB2BProducts.emailMagicLinks,
-    AdminPortalB2BProducts.sso,
     AdminPortalB2BProducts.oauthGoogle
   ],
   getRoleDescription: (role: Role) => {
@@ -33,7 +32,7 @@ export const adminPortalConfig = {
 }
 
 export const discoveryConfig = {
-  products: [B2BProducts.sso, B2BProducts.oauth, B2BProducts.emailMagicLinks],
+  products: [B2BProducts.oauth, B2BProducts.emailMagicLinks],
   sessionOptions: { sessionDurationMinutes: 60 },
   oauthOptions: {
     providers: [{type: B2BOAuthProviders.Google}]

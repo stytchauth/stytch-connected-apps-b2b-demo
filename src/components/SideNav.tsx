@@ -32,12 +32,6 @@ export const SideNav: React.FC = () => {
           Members
         </NavLink>
         <NavLink
-          to="/sso"
-          className={({ isActive }) => (isActive ? 'active-link' : '')}
-        >
-          SSO
-        </NavLink>
-        <NavLink
           to="/scim"
           className={({ isActive }) => (isActive ? 'active-link' : '')}
         >
