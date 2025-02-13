@@ -1,2 +1,2 @@
-# stytch-connected-apps-agent-demo
-Stytch Connected Apps AI Agent Demo
+# stytch-connected-apps-b2b-demo
+Stytch Connected Apps B2B Demo
