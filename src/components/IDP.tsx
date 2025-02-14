@@ -6,9 +6,9 @@ export const IDP = (): JSX.Element => {
   const { member } = useStytchMember();
 
   if (!member) {
-    // Redirect to login, preserving the current URL to return after auth
-    const currentUrl = encodeURIComponent(window.location.href);
-    return <Navigate to={`/?return_to=${currentUrl}`} />;
+    // Redirect to login, preserving only the pathname to return after auth
+    const currentPath = encodeURIComponent(window.location.pathname);
+    return <Navigate to={`/?next_route=${currentPath}`} />;
   }
 
   return (

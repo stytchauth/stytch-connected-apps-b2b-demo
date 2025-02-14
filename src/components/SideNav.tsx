@@ -31,12 +31,6 @@ export const SideNav: React.FC = () => {
         >
           Members
         </NavLink>
-        <NavLink
-          to="/scim"
-          className={({ isActive }) => (isActive ? 'active-link' : '')}
-        >
-          SCIM
-        </NavLink>
       </div>
       <div className="logout-link" onClick={handleLogout}>
         Log Out
