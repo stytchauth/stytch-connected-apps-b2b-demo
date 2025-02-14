@@ -15,8 +15,6 @@ export const Authenticate = (): JSX.Element => {
     return <Navigate to={nextRoute || '/dashboard'} />;
   }
 
-  console.log("next route" + nextRoute);
-
   // Preserve existing query parameters and add next_route
   const existingParams = new URLSearchParams(location.search);
   const redirectParams = new URLSearchParams(existingParams);
@@ -36,8 +34,6 @@ export const Authenticate = (): JSX.Element => {
       discoveryRedirectURL: fullRedirectURL,
     },
   };
-
-  console.log("configWithRedirect", configWithRedirect);
 
   return (
     <div className="centered-login">
