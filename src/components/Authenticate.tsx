@@ -17,10 +17,14 @@ export const Authenticate = (): JSX.Element => {
 
   console.log("next route" + nextRoute);
 
-  // Update config with redirect URL including the current path
-  const fullRedirectURL = `${window.location.origin}/authenticate${
-    hasNextRoute ? location.search : ''
-  }`;
+  // Preserve existing query parameters and add next_route
+  const existingParams = new URLSearchParams(location.search);
+  const redirectParams = new URLSearchParams(existingParams);
+  if (hasNextRoute) {
+    redirectParams.set('next_route', searchParams.get('next_route') || '');
+  }
+
+  const fullRedirectURL = `${window.location.origin}/authenticate?${redirectParams.toString()}`;
 
   const configWithRedirect = {
     ...discoveryConfig,
