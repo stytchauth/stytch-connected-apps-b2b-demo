@@ -6,8 +6,10 @@ export const IDP = (): JSX.Element => {
   const { member } = useStytchMember();
 
   if (!member) {
-    // Redirect to login, preserving only the pathname to return after auth
-    const currentPath = encodeURIComponent(window.location.pathname);
+    // Redirect to login, preserving pathname and search params to return after auth
+    const currentPath = encodeURIComponent(
+      window.location.pathname + window.location.search
+    );
     return <Navigate to={`/?next_route=${currentPath}`} />;
   }
 
