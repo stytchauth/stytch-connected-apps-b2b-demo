@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stytch B2B Connected Apps Demo
+
+<img src="./public/og.png" alt="Image" width="400" />
 
 ## Getting Started
 
-First, run the development server:
+The full Connected Apps guide can be found [here](https://stytch.com/docs/b2b/guides/connected-apps/getting-started). 
+This repository shows some common patterns with Connected Apps in a B2B Context:
+- Organization Discovery, Login, and Member Management
+- OAuth Consent Flow
+- Exposing external API endpoints protected by Stytch-powered OAuth 
 
+#### Download the Repository
+```bash
+git clone https://https://github.com/stytchauth/stytch-connected-apps-b2b-demo.git
+cd stytch-connected-apps-b2b-demo
+nvm use # We recommend NVM for managing your node versions
+npm install
+```
+
+#### Get API Keys
+
+Sign up for an account at https://stytch.com/dashboard
+
+Next, create a `.env.local` file in the root directory. The following environment variables need to be configured:
+```.env
+# Stytch credentials
+NEXT_PUBLIC_STYTCH_PUBLIC_TOKEN=<your-stytch-project-id>
+STYTCH_PROJECT_ID=<your-stytch-project-id>
+STYTCH_SECRET=<your-stytch-secret>
+```
+
+Finally, start the application
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
