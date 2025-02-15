@@ -1,0 +1,29 @@
+{
+  "next_steps": [
+    {
+      "step": 1,
+      "title": "Sign Up for Stytch",
+      "description": "Create a Stytch account at https://stytch.com and access the dashboard."
+    },
+    {
+      "step": 2,
+      "title": "Create a B2B Project",
+      "description": "In the Stytch Dashboard, create a new B2B project to manage your application's authentication."
+    },
+    {
+      "step": 3,
+      "title": "Complete the Connected Apps getting started Guide",
+      "description": "Follow along for more at https://stytch.com/docs/b2b/guides/connected-apps/getting-started"
+    },
+    {
+      "step": 4,
+      "title": "Test Your Integration",
+      "description": "Run test authentication flows to verify everything works before going live."
+    },
+    {
+      "step": 5,
+      "title": "Go Live",
+      "description": "Deploy your application with Stytch authentication and start onboarding users!"
+    }
+  ]
+}
