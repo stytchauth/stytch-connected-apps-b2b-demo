@@ -36,3 +36,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+#### Integrate with ChatGPT custom GPTs
+Create a custom GPT with the following API spec: [apiSpec.yaml](./apiSpec.yaml). You can use the GPT editor at [ChatGPT GPT Editor](https://chatgpt.com/gpts/editor), choose `create new action` and set up authentication via OAuth by creating a client in the [Stytch dashboard](https://stytch.com/dashboard/connected-apps).

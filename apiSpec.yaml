@@ -1,0 +1,176 @@
+openapi: 3.1.0
+info:
+  title: Stytch B2B OAuth API
+  description: Retrieve authenticated user identity details from Stytch.
+  version: v1.0.0
+servers:
+  - url: https://www.stytchb2bdemo.com
+    description: Stytch B2B Demo
+paths:
+  /v1/oauth2/userinfo:
+    get:
+      servers:
+        - url: https://login.stytchb2bdemo.com
+      operationId: getUserInfo
+      summary: Retrieve authenticated user information.
+      security:
+        - OAuth2: []  # ✅ OpenAI will provide the access token automatically
+      description: |
+        Fetch user profile details using the access token obtained via OAuth authentication.
+      responses:
+        '200':
+          description: Successfully retrieved user info.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sub:
+                    type: string
+                    description: Unique identifier for the user.
+                  email:
+                    type: string
+                    description: User's email address.
+                  email_verified:
+                    type: boolean
+                    description: Whether the email has been verified.
+                  name:
+                    type: string
+                    description: Full name of the user.
+                  given_name:
+                    type: string
+                    description: User's first name.
+                  family_name:
+                    type: string
+                    description: User's last name.
+  /next_steps.json:
+    get:
+      servers:
+        - url: https://www.stytchb2bdemo.com
+      operationId: getNextSteps
+      summary: Retrieve next steps for setting up Stytch.
+      description: |
+        Returns a list of steps to guide you through setting up and integrating with Stytch.
+      responses:
+        '200':
+          description: Successfully retrieved next steps.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  next_steps:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        step:
+                          type: integer
+                          description: The order of the step.
+                        title:
+                          type: string
+                          description: The title of the step.
+                        description:
+                          type: string
+                          description: A description of the step.
+  /api/v1/invite-member:
+    post:
+      summary: Invite a new member to an organization
+      operationId: inviteMember
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  description: Email address of the member to invite.
+                  example: "newmember@example.com"
+                name:
+                  type: string
+                  description: Optional full name of the member being invited.
+                  example: "John Doe"
+              required:
+                - email
+      responses:
+        "200":
+          description: Member invitation was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    description: Data returned from the Stytch API.
+                    properties:
+                      member_id:
+                        type: string
+                        description: The ID of the newly invited member.
+                        example: "new-member-id"
+                      status:
+                        type: string
+                        description: The invitation status for the new member (e.g., pending).
+                        example: "pending"
+  /api/v1/list-member:
+    get:
+      summary: Gets all members in the organization
+      operationId: listMember
+      responses:
+        "200":
+          description: A list of organization members.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    description: An array of member objects belonging to the organization.
+                    items:
+                      type: object
+                      description: A single member object with details.
+                      properties:
+                        member_id:
+                          type: string
+                          description: The unique ID of the member.
+                          example: "member-1234"
+                        email:
+                          type: string
+                          format: email
+                          description: The email address of the member.
+                          example: "member@example.com"
+                        name:
+                          type: string
+                          description: The full name of the member.
+                          example: "John Doe"
+                        status:
+                          type: string
+                          description: The status of the member in the organization.
+                          example: "active"
+
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: OAuth 2.0 authentication using Stytch B2B.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.stytchb2bdemo.com/idp
+          tokenUrl: https://login.stytchb2bdemo.com/v1/oauth2/token
+          scopes:
+            openid: Access user identity.
+            profile: Access basic profile information.
+            email: Access email address.
+  schemas: {}
+security:
+  - OAuth2: []
