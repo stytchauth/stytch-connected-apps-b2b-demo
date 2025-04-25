@@ -12,7 +12,7 @@ This repository shows some common patterns with Connected Apps in a B2B Context:
 
 #### Download the Repository
 ```bash
-git clone https://https://github.com/stytchauth/stytch-connected-apps-b2b-demo.git
+git clone https://github.com/stytchauth/stytch-connected-apps-b2b-demo.git
 cd stytch-connected-apps-b2b-demo
 nvm use # We recommend NVM for managing your node versions
 npm install
