@@ -15,7 +15,7 @@
     "next": "^15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "stytch": "^12.5.0"
+    "stytch": "^12.43.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
