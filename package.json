@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@stytch/nextjs": "^21.4.0",
-    "@stytch/vanilla-js": "^5.17.0",
-    "jose": "^5.9.6",
-    "next": "^15.2.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "stytch": "^12.5.0"
+    "@stytch/nextjs": "^21.18.1",
+    "@stytch/vanilla-js": "^5.45.1",
+    "jose": "^5.10.0",
+    "next": "^15.5.29",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "stytch": "^12.43.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -23,7 +23,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.1.7",
+    "eslint-config-next": "^15.5.29",
     "typescript": "^5"
   }
 }
